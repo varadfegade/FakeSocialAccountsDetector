@@ -1,0 +1,246 @@
+.detect-head {
+  margin-bottom: var(--s-8);
+}
+
+/* Split layout */
+.detect-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-6);
+  align-items: start;
+}
+
+/* Input Panel */
+.detect-input-panel {
+  position: sticky;
+  top: var(--s-8);
+}
+
+.detect-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.input-shell {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+}
+
+.input-shell:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.input-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.input-field {
+  flex: 1;
+  font-size: var(--fs-base);
+  padding: var(--s-1) 0;
+  min-width: 0;
+}
+
+.input-field::placeholder {
+  color: var(--text-dim);
+}
+
+.input-clear {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 12px;
+}
+
+.detected-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.detected-chip code {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  padding: 2px var(--s-2);
+  border-radius: var(--r-sm);
+}
+
+.detect-err {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  background: var(--danger-bg);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: var(--r-md);
+  color: var(--danger);
+  font-size: var(--fs-sm);
+}
+
+.example-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.example-label {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+.example-chip {
+  font-size: var(--fs-xs);
+  padding: var(--s-1) var(--s-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-full);
+  color: var(--text-muted);
+  font-family: var(--mono);
+  transition: all var(--dur-fast) ease;
+}
+
+.example-chip:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Results Panel */
+.detect-results-panel {
+  min-height: 400px;
+}
+
+.results-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  min-height: 400px;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+}
+
+.ph-icon {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.pulse-icon {
+  animation: pulse 1.5s ease infinite;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.results-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+}
+
+.results-platform-icon {
+  font-size: 1.5rem;
+}
+
+.results-profile h3 {
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+
+.results-platform-name {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.results-profile .badge {
+  margin-left: auto;
+}
+
+.results-meter {
+  padding: var(--s-5);
+}
+
+.results-summary {
+  padding: var(--s-4) var(--s-5);
+  border-left-color: var(--accent) !important;
+}
+
+.results-summary strong {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: var(--s-2);
+}
+
+.results-summary p {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.results-rec {
+  padding: var(--s-4) var(--s-5);
+}
+
+.rec-label {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  margin-bottom: var(--s-2);
+  color: var(--accent-secondary);
+}
+
+.results-rec p {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.results-metrics h3 {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  margin-bottom: var(--s-3);
+}
+
+.metrics-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.results-actions {
+  display: flex;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.results-time {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .detect-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detect-input-panel {
+    position: static;
+  }
+}

@@ -1,0 +1,131 @@
+.history-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-6);
+  flex-wrap: wrap;
+}
+
+.history-actions {
+  display: flex;
+  gap: var(--s-2);
+  flex-shrink: 0;
+}
+
+/* Filters */
+.filter-bar {
+  display: flex;
+  gap: var(--s-2);
+  margin-bottom: var(--s-5);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: var(--s-2) var(--s-3);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-full);
+  color: var(--text-muted);
+  transition: all var(--dur-fast) ease;
+}
+
+.filter-btn:hover {
+  color: var(--text-secondary);
+  border-color: var(--border-active);
+}
+
+.filter-btn.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Empty */
+.history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-16) 0;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+}
+
+/* Table */
+.history-table {
+  overflow-x: auto;
+}
+
+.h-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 70px 100px 100px 120px;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--dur-fast) ease;
+}
+
+.h-row:last-child { border-bottom: none; }
+.h-row:not(.h-header):hover { background: var(--bg-surface-hover); }
+
+.h-header {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.h-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+}
+
+.h-platform {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.h-icon { font-size: 1rem; }
+.h-pname { color: var(--text-secondary); }
+
+.h-user-link {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--accent);
+  transition: opacity var(--dur-fast) ease;
+}
+
+.h-user-link:hover { opacity: 0.8; }
+
+.h-score {
+  font-weight: 700;
+  font-family: var(--mono);
+}
+
+.h-date {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+}
+
+.h-actions {
+  display: flex;
+  gap: var(--s-2);
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .h-row {
+    grid-template-columns: 1fr 80px 80px;
+  }
+  .h-platform .h-pname,
+  .h-date,
+  .h-header .h-cell:nth-child(1),
+  .h-header .h-cell:nth-child(5) { display: none; }
+}

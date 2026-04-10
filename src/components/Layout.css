@@ -1,0 +1,26 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+  margin-left: var(--sidebar-w);
+  padding: var(--s-8) var(--s-8) var(--s-16);
+  max-width: 100%;
+  transition: margin-left var(--dur-slow) var(--ease-out);
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  .app-content {
+    margin-left: 0;
+    padding: var(--s-16) var(--s-4) var(--s-10);
+  }
+}
+
+@media (min-width: 1600px) {
+  .app-content {
+    padding: var(--s-8) var(--s-12) var(--s-16);
+  }
+}

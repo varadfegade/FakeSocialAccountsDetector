@@ -1,0 +1,60 @@
+.magnetic-wrapper {
+  display: inline-flex;
+  will-change: transform;
+}
+
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-8);
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: #fff;
+  border-radius: var(--r-lg);
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  transition: box-shadow var(--dur-base) var(--ease-out);
+}
+
+.magnetic-btn-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  border-radius: inherit;
+  transition: background var(--dur-base) ease;
+  z-index: 0;
+}
+
+.magnetic-btn:hover .magnetic-btn-bg {
+  background: #0ea472;
+}
+
+.magnetic-btn:hover {
+  box-shadow: 0 0 32px var(--accent-glow), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.magnetic-btn:active .magnetic-btn-bg {
+  background: #0d9668;
+}
+
+.magnetic-btn-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.magnetic-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.magnetic-btn:disabled:hover {
+  box-shadow: none;
+}
